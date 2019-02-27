@@ -11,7 +11,8 @@ import java.io.File;
 
  enum Platform{
     WINDOWS,
-     LINUX
+     LINUX,
+     MAC
 
 }
 
@@ -41,6 +42,11 @@ public class ExtentManager {
                 System.out.println("ExtentReport Path for WINDOWS: " + windowsPath + "\n");
                 break;
             case LINUX:
+                reportFileLocation = macReportFileLoc;
+                createReportPath(macPath);
+                System.out.println("ExtentReport Path for Linux" +macPath + "\n");
+                break;
+            case MAC:
                 reportFileLocation = macReportFileLoc;
                 createReportPath(macPath);
                 System.out.println("ExtentReport Path for WINDOWS: " + macPath + "\n");
@@ -91,7 +97,7 @@ public class ExtentManager {
                     || operSys.contains("aix")) {
                 platform = Platform.LINUX;
             } else if (operSys.contains("mac")) {
-               // platform = Platform.MAC;
+                platform = Platform.MAC;
             }
         }
         return platform;

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
     <test verbose="9" preserve-order="true"
           name="testSuite" parallel="methods" thread-count="17">
         <classes>
-            <class name="SingleTest" />
+            <class  name="SingleTest"  />
             <class name="SingleTestTwo" />
             <class name="SingleTestThree" />
             <class name="SingleTestFour"/>
